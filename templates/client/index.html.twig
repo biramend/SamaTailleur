@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Clients{% endblock %}
+{% block stylesheets %}
+.table{ 
+    margin-left: -200px; 
+    position: absolute;
+    left: 50%;
+}
+
+{% endblock%}
+{% block body %}
+    <h1 style="text-align:center">Mes Client</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.prenom }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.phone }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.address }}</td>
+                <td>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">Afficher</a>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('client_new') }}">Ajouter un client</a>
+{% endblock %}

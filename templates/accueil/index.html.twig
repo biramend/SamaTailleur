@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<style>
+    h3 {
+  width: 100%;
+  height: 400px;
+  background-image: url('{{asset('img/cou.jpg')}}');
+  background-size: 100% 100%;
+  
+  margin-top: 0%;
+}
+h2 {
+  width: 100%;
+  height: 400px;
+  background-image: url('{{asset('img/machin1.PNG')}}');
+  background-size: 100% 100%;
+  
+  margin-top: 0%;
+}
+.bir {
+  width: 100%;
+  height: 400px;
+  background-image: url('{{asset('img/machine.PNG')}}');
+  background-size: 100% 100%;
+  
+  margin-top: 0%;
+}
+ .b1 {
+  width: 100%;
+  height: 400px;
+  background-image: url('{{asset('img/bir.jpg')}}');
+  background-size: 100% 100%;
+  
+  margin-top: 0%;
+}
+</style>
+<h3></h3>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2 class=" rounded-circle bir"></h2>
+
+    </div>
+    <div class="col-sm-4">
+      <h2 class="rounded-circle fille"></h2>
+    </div>
+    <div class="col-sm-4">
+      <h2 class="rounded-circle b1"></h2>    
+    
+    </div>
+  </div>
+{% endblock %}

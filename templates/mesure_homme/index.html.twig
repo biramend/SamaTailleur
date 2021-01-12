@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureHomme index{% endblock %}
+
+{% block body %}
+    <h1>MesureHomme index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Epaule</th>
+                <th>Mass_courte</th>
+                <th>Mass_long</th>
+                <th>Mass_troiscart</th>
+                <th>Tourede_mass</th>
+                <th>Poigner</th>
+                <th>Coup</th>
+                <th>Poitrine</th>
+                <th>Longboubou</th>
+                <th>Demi_saison</th>
+                <th>Trois_cart</th>
+                <th>Ceinture</th>
+                <th>Longueur_pantalon</th>
+                <th>Cuisse</th>
+                <th>Anche</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mesure_homme in mesure_hommes %}
+            <tr>
+                <td>{{ mesure_homme.id }}</td>
+                <td>{{ mesure_homme.epaule }}</td>
+                <td>{{ mesure_homme.massCourte }}</td>
+                <td>{{ mesure_homme.massLong }}</td>
+                <td>{{ mesure_homme.massTroiscart }}</td>
+                <td>{{ mesure_homme.touredeMass }}</td>
+                <td>{{ mesure_homme.poigner }}</td>
+                <td>{{ mesure_homme.coup }}</td>
+                <td>{{ mesure_homme.poitrine }}</td>
+                <td>{{ mesure_homme.longboubou }}</td>
+                <td>{{ mesure_homme.demiSaison }}</td>
+                <td>{{ mesure_homme.troisCart }}</td>
+                <td>{{ mesure_homme.ceinture }}</td>
+                <td>{{ mesure_homme.longueurPantalon }}</td>
+                <td>{{ mesure_homme.cuisse }}</td>
+                <td>{{ mesure_homme.anche }}</td>
+                <td>
+                    <a href="{{ path('mesure_homme_show', {'id': mesure_homme.id}) }}">show</a>
+                    <a href="{{ path('mesure_homme_edit', {'id': mesure_homme.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mesure_homme_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureHomme{% endblock %}
+
+{% block body %}
+    <h1>MesureHomme</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mesure_homme.id }}</td>
+            </tr>
+            <tr>
+                <th>Epaule</th>
+                <td>{{ mesure_homme.epaule }}</td>
+            </tr>
+            <tr>
+                <th>Mass_courte</th>
+                <td>{{ mesure_homme.massCourte }}</td>
+            </tr>
+            <tr>
+                <th>Mass_long</th>
+                <td>{{ mesure_homme.massLong }}</td>
+            </tr>
+            <tr>
+                <th>Mass_troiscart</th>
+                <td>{{ mesure_homme.massTroiscart }}</td>
+            </tr>
+            <tr>
+                <th>Tourede_mass</th>
+                <td>{{ mesure_homme.touredeMass }}</td>
+            </tr>
+            <tr>
+                <th>Poigner</th>
+                <td>{{ mesure_homme.poigner }}</td>
+            </tr>
+            <tr>
+                <th>Coup</th>
+                <td>{{ mesure_homme.coup }}</td>
+            </tr>
+            <tr>
+                <th>Poitrine</th>
+                <td>{{ mesure_homme.poitrine }}</td>
+            </tr>
+            <tr>
+                <th>Longboubou</th>
+                <td>{{ mesure_homme.longboubou }}</td>
+            </tr>
+            <tr>
+                <th>Demi_saison</th>
+                <td>{{ mesure_homme.demiSaison }}</td>
+            </tr>
+            <tr>
+                <th>Trois_cart</th>
+                <td>{{ mesure_homme.troisCart }}</td>
+            </tr>
+            <tr>
+                <th>Ceinture</th>
+                <td>{{ mesure_homme.ceinture }}</td>
+            </tr>
+            <tr>
+                <th>Longueur_pantalon</th>
+                <td>{{ mesure_homme.longueurPantalon }}</td>
+            </tr>
+            <tr>
+                <th>Cuisse</th>
+                <td>{{ mesure_homme.cuisse }}</td>
+            </tr>
+            <tr>
+                <th>Anche</th>
+                <td>{{ mesure_homme.anche }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('mesure_homme_index') }}">back to list</a>
+
+    <a href="{{ path('mesure_homme_edit', {'id': mesure_homme.id}) }}">edit</a>
+
+    {{ include('mesure_homme/_delete_form.html.twig') }}
+{% endblock %}
